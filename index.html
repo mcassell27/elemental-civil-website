@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elemental Civil - Sustainable Infrastructure Solutions</title>
+    <style>
+        :root {
+            --primary-color: #2a7d8b;
+            --secondary-color: #4d4d4d;
+            --accent-color: #60a550;
+            --light-accent: #e6f2e6;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+            --logo-color: #35910e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--secondary-color);
+        }
+        
+        /* Simple animations */
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 1s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from { 
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to { 
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 1s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from { 
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            to { 
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .slide-in-up {
+            animation: slideInUp 1s ease-out;
+        }
+        
+        @keyframes slideInUp {
+            from { 
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to { 
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        /* Bird animation - Updated to fly from right to left with size variations */
+        .birds-container {
+            position: fixed;
+            top: 15%;
+            right: -10%; /* Changed from left to right */
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+            opacity: 0;
+            animation: birdsFlyIn 20s ease-in-out forwards;
+            animation-delay: 10s; /* Birds appear after 10 seconds */
+        }
+
+        @keyframes birdsFlyIn {
+            0% { opacity: 0; right: -10%; } /* Changed from left to right */
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { opacity: 0; right: 110%; } /* Changed from left to right */
+        }
+
+        .bird {
+            position: absolute;
+            background: transparent;
+            animation: fly 0.5s ease-in-out infinite alternate;
+        }
+
+        .bird:nth-child(1) {
+            top: 20%;
+            font-size: 22px; /* Size variation */
+            animation-delay: 0.1s;
+        }
+
+        .bird:nth-child(2) {
+            top: 15%;
+            right: 5%; /* Changed from left to right */
+            font-size: 18px; /* Size variation */
+            animation-delay: 0.2s;
+        }
+
+        .bird:nth-child(3) {
+            top: 25%;
+            right: 8%; /* Changed from left to right */
+            font-size: 25px; /* Size variation */
+            animation-delay: 0.3s;
+        }
+
+        .bird:nth-child(4) {
+            top: 10%;
+            right: 3%; /* Changed from left to right */
+            font-size: 16px; /* Size variation */
+            animation-delay: 0.4s;
+        }
+
+        .bird:nth-child(5) {
+            top: 30%;
+            right: 10%; /* Changed from left to right */
+            font-size: 20px; /* Size variation */
+            animation-delay: 0.5s;
+        }
+
+        @keyframes fly {
+            from { transform: translateY(0) rotate(-10deg); } /* Changed rotation angle */
+            to { transform: translateY(-10px) rotate(-5deg); } /* Changed rotation angle */
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        .logo img {
+            height: 85px;
+            margin-right: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding-top: 80px;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--logo-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2d7a0b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--logo-color);
+            color: var(--logo-color);
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--logo-color);
+            color: white;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            font-size: 36px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+        
+        .mission {
+            background-color: var(--light-accent);
+            text-align: center;
+        }
+        
+        .mission-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .mission-icon {
+            font-size: 60px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .mission h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        .services {
+            background-color: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .service-img {
+            height: 200px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.05);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-size: 22px;
+        }
+        
+        .offset-system {
+            background-color: var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .offset-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background-color: var(--accent-color);
+            opacity: 0.1;
+            clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+        }
+        
+        .offset-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .offset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .offset-step {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .offset-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .offset-step h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .benefits {
+            background-color: white;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .benefit-card {
+            text-align: center;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+        
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--light-accent);
+            border-radius: 50%;
+            color: var(--accent-color);
+            font-size: 32px;
+        }
+        
+        .benefit-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .counter-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .counter-item h3 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .counter-item p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .about {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-img {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .about-img:before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 80%;
+            height: 80%;
+            border: 4px solid var(--accent-color);
+            border-radius: 8px;
+            z-index: -1;
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .about-text h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .contact {
+            background-color: var(--primary-color);
+            color: white;
+            position: relative;
+        }
+        
+        .leaf-bg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            opacity: 0.1;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-info h2 {
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 20px;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            margin-right: 15px;
+            color: var(--accent-color);
+            font-size: 20px;
+        }
+        
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .contact-form input, 
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-form .btn {
+            background-color: var(--logo-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 12px 30px;
+            font-size: 16px;
+        }
+        
+        .contact-form .btn:hover {
+            background-color: #2d7a0b;
+        }
+        
+        footer {
+            background-color: var(--dark-gray);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        
+        .footer-logo span {
+            color: var(--accent-color);
+        }
+        
+        .footer-about p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .footer-links h3,
+        .footer-contact h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h3:after,
+        .footer-contact h3:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        .footer-contact p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 14px;
+        }
+        
+        .percentage-slider {
+            position: relative;
+            width: 100%;
+            padding: 10px 0;
+        }
+        
+        .percentage-slider label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .percentage-slider input[type="range"] {
+            width: 100%;
+        }
+        
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px 10px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-img {
+                order: -1;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Birds animation that appears after 10 seconds -->
+    <div class="birds-container">
+        <div class="bird">🕊️</div>
+        <div class="bird">🕊️</div>
+        <div class="bird">🕊️</div>
+        <div class="bird">🕊️</div>
+        <div class="bird">🕊️</div>
+    </div>
+    
+    <header>
+        <div class="container nav-container">
+            <div class="logo slide-in-left">
+                <img src="images/elemental-transparent.png" alt="Elemental Civil Logo">
+            </div>
+            <nav>
+                <ul class="slide-in-right">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#offset">Offset System</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container hero-content fade-in">
+            <h1>Building Infrastructure, Preserving Nature</h1>
+            <p>Elemental Civil combines high-performance civil works with innovative environmental offsetting solutions to create guilt-free infrastructure development.</p>
+            <a href="#offset" class="btn">Discover Our Offset System</a>
+            <a href="#contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+    </section>
+
+    <section class="section mission">
+        <div class="container">
+            <div class="mission-content fade-in">
+                <div class="mission-icon pulse">♻️</div>
+                <h3>Our Mission</h3>
+                <p>At Elemental Civil, we're revolutionizing infrastructure development by integrating environmental responsibility into every project. We provide high-performance civil works with a built-in solution to offset ecological impact, allowing clients to balance progress with environmental protection.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="offset" class="section offset-system">
+        <div class="offset-bg"></div>
+        <div class="container offset-content">
+            <h2 class="section-title fade-in">Our Natural Offsetting System</h2>
+            <div class="offset-grid">
+                <div class="offset-step slide-in-left">
+                    <div class="step-number">1</div>
+                    <h3>Choose Your Offset Percentage</h3>
+                    <p>With each project, clients select their environmental commitment level, starting at a minimum of 10%. Our innovative incentive schemes encourage higher percentages with each new contract.</p>
+                </div>
+                <div class="offset-step fade-in">
+                    <div class="step-number">2</div>
+                    <h3>Earn Natural Offsetting Credits</h3>
+                    <p>We convert your offset investment into comprehensive Natural Offsetting Credits that go beyond carbon to address all environmental impacts of construction and infrastructure development.</p>
+                </div>
+                <div class="offset-step slide-in-right">
+                    <div class="step-number">3</div>
+                    <h3>Receive Recognition & Benefits</h3>
+                    <p>Gain government-recognized merits and awards for your environmental leadership. Stand out from competitors with tangible proof of your commitment to sustainable development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section services">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Specialized Services</h2>
+            <div class="services-grid">
+                <div class="service-card slide-in-up">
+                    <div class="service-img">
+                        <img src="images/excavation-service.jpg" alt="Excavation Services">
+                    </div>
+                    <div class="service-content">
+                        <h3>Excavation Services</h3>
+                        <p>Precision excavation for all project types and scales, from site preparation to complex earthworks, using advanced equipment and techniques that minimize environmental disruption.</p>
+                    </div>
+                </div>
+                <div class="service-card slide-in-up">
+                    <div class="service-img">
+                        <img src="images/drainage-service.jpg" alt="Drainage Solutions">
+                    </div>
+                    <div class="service-content">
+                        <h3>Drainage Solutions</h3>
+                        <p>Comprehensive drainage system design and installation, including stormwater management, culverts, and water-sensitive urban design solutions that protect natural water systems.</p>
+                    </div>
+                </div>
+                <div class="service-card slide-in-up">
+                    <div class="service-img">
+                        <img src="images/infrastructure-service.jpg" alt="Infrastructure Development">
+                    </div>
+                    <div class="service-content">
+                        <h3>Infrastructure Development</h3>
+                        <p>Full-spectrum civil construction services for roads, bridges, utilities, and public facilities, with integrated environmental impact assessment and mitigation strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="section benefits">
+        <div class="container">
+            <h2 class="section-title fade-in">Benefits of Partnering With Us</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon pulse">🌱</div>
+                    <h3>Environmental Leadership</h3>
+                    <p>Demonstrate your organization's commitment to sustainability and gain competitive advantage in an increasingly eco-conscious market.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon pulse">🏆</div>
+                    <h3>Recognition & Awards</h3>
+                    <p>Earn government-recognized certifications and industry awards for your contributions to environmental preservation.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon pulse">📊</div>
+                    <h3>Measurable Impact</h3>
+                    <p>Receive detailed reports quantifying your environmental offset contributions and their positive effects on nature.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon pulse">⚡</div>
+                    <h3>High-Performance Execution</h3>
+                    <p>Benefit from our expertise in excavation and drainage, ensuring your projects are completed to the highest standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="counter-section">
+        <div class="container">
+            <div class="counter-grid">
+                <div class="counter-item fade-in">
+                    <h3>50+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="counter-item fade-in">
+                    <h3>15,000+</h3>
+                    <p>Tons of Carbon Offset</p>
+                </div>
+                <div class="counter-item fade-in">
+                    <h3>25+</h3>
+                    <p>Satisfied Clients</p>
+                </div>
+                <div class="counter-item fade-in">
+                    <h3>30%</h3>
+                    <p>Average Offset Commitment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title fade-in">About Elemental Civil</h2>
+            <div class="about-content">
+                <div class="about-text slide-in-left">
+                    <h2>Balancing Progress & Preservation</h2>
+                    <p>Elemental Civil was founded on a simple yet powerful idea: infrastructure development doesn't have to come at the expense of our natural world. We've created a system that allows clients to directly offset the environmental impact of their construction projects.</p>
+                    <p>As a high-performance civil works company specializing in excavations and drainage, we bring technical expertise and environmental consciousness to every project. Our team delivers exceptional results while helping clients meet their sustainability goals.</p>
+                    <p>Through our innovative natural offsetting system, we're creating a new standard for responsible development—one where progress and environmental stewardship go hand in hand.</p>
+                    <a href="#contact" class="btn">Work With Us</a>
+                </div>
+                <div class="about-img slide-in-right">
+                    <img src="images/about-team.jpg" alt="About Elemental Civil">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <svg class="leaf-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <path d="M30,90 C10,70 10,30 30,10 C50,30 50,70 30,90 Z" fill="#ffffff"></path>
+        </svg>
+        <div class="container">
+            <h2 class="section-title fade-in">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info slide-in-left">
+                    <h2>Ready to Build Sustainably?</h2>
+                    <p>Contact our team to discuss your project needs and discover how our offsetting system can help you achieve sustainable development goals.</p>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+<div>
+                            <strong>Email</strong>
+                            <p>info@elementalcivil.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <strong>Phone</strong>
+                            <p>(555) 123-4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <strong>Office</strong>
+                            <p>123 Sustainable Way, Cityville, State 12345</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form slide-in-right">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="project">Project Type</label>
+                            <select id="project" name="project">
+                                <option value="">Select Project Type</option>
+                                <option value="excavation">Excavation</option>
+                                <option value="drainage">Drainage</option>
+                                <option value="infrastructure">Infrastructure Development</option>
+                                <option value="other">Other (Please specify)</option>
+                            </select>
+                        </div>
+                        <div class="form-group percentage-slider">
+                            <label for="offset">Environmental Offset Percentage (Minimum 10%)</label>
+                            <input type="range" id="offset" name="offset" min="10" max="100" value="30" step="5">
+                            <div class="slider-labels">
+                                <span>10%</span>
+                                <span>50%</span>
+                                <span>100%</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about fade-in">
+                    <div class="footer-logo">
+                        <img src="images/elemental-transparent.png" alt="Elemental Civil Logo">
+                    </div>
+                    <p>Building infrastructure with a conscience. We specialize in high-performance civil works with integrated environmental offsetting solutions.</p>
+                </div>
+                <div class="footer-links fade-in">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#offset">Our Offset System</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact fade-in">
+                    <h3>Contact Us</h3>
+                    <p>123 Sustainable Way</p>
+                    <p>Cityville, State 12345</p>
+                    <p>info@elementalcivil.com</p>
+                    <p>(555) 123-4567</p>
+                </div>
+            </div>
+            <div class="copyright fade-in">
+                <p>&copy; 2025 Elemental Civil. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
