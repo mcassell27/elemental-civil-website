@@ -84,3 +84,99 @@
     word-break: break-word;
   }
 }
+/* Force light mode regardless of system settings */
+:root {
+  color-scheme: light only;
+}
+
+/* Basic mobile responsiveness */
+@media (max-width: 768px) {
+  /* Make images responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Fix hero section on mobile */
+  .hero {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/hero-background.jpg');
+    height: auto;
+    min-height: 80vh;
+    padding-top: 120px; /* Increased padding at top */
+    padding-bottom: 40px;
+    background-position: center;
+  }
+  
+  /* Center header logo and navigation */
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .logo {
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+  
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  nav ul li {
+    margin: 5px 10px;
+  }
+  
+  /* Fix heading text visibility */
+  .hero h1 {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    font-size: 28px;
+    line-height: 1.4;
+    margin: 0 0 15px 0;
+    padding: 0;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8); /* Added shadow for better visibility */
+  }
+  
+  .hero p {
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+  }
+  
+  /* Make sure content container doesn't constrain text */
+  .hero-content {
+    width: 90%;
+    max-width: 90%;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.3); /* Semi-transparent background */
+    border-radius: 8px;
+  }
+  
+  /* Fix container width on mobile */
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+  }
+  
+  /* Fix for contact section text overflow */
+  .contact-info h2, 
+  .contact-info p,
+  .contact-content h2,
+  .contact-content p {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    white-space: normal;
+    word-break: break-word;
+  }
+}
