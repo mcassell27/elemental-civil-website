@@ -1,0 +1,28 @@
+<style>
+  /* Responsive images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Background images */
+  [class*="-background"], [class*="background-"] {
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    /* Adjust container widths */
+    .container, .row, [class*="col-"] {
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    
+    /* Ensure proper image sizing */
+    .img-fluid, .img-responsive {
+      width: 100%;
+    }
+  }
+</style>
