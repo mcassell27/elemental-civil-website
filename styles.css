@@ -110,3 +110,41 @@ html, body {
     padding-right: 15px;
   }
 }
+/* Add this to your styles.css file */
+
+/* Fix hero section padding to prevent header overlap */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 140px !important; /* Increased padding to prevent header overlap */
+    min-height: 100vh; /* Ensure full viewport height */
+  }
+  
+  /* Fix hero content positioning */
+  .hero-content {
+    padding: 20px 15px;
+  }
+  
+  /* Fix horizontal overflow in all sections */
+  .section, .contact, .container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+  }
+  
+  /* Fix contact form and content to prevent horizontal overflow */
+  .contact-content, .contact-form, .contact-info {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Ensure form inputs don't overflow */
+  .form-group input, 
+  .form-group textarea, 
+  .form-group select {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
