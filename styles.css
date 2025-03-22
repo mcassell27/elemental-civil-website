@@ -3,111 +3,16 @@
   color-scheme: light only;
 }
 
-/* Additional protection against dark mode */
-@media (prefers-color-scheme: dark) {
-  body, header, footer, main, div {
-    background-color: white !important;
-    color: #4d4d4d !important;
-  }
-}
-  /* Responsive images */
+/* Basic mobile responsiveness */
+@media (max-width: 768px) {
+  /* Make images responsive */
   img {
     max-width: 100%;
     height: auto;
   }
   
-  /* Background images */
-  [class*="-background"], [class*="background-"] {
-    background-size: cover;
-    background-position: center;
-  }
-  
-  /* Mobile adjustments */
-  @media (max-width: 768px) {
-    /* Adjust container widths */
-    .container, .row, [class*="col-"] {
-      width: 100%;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-    
-    /* Ensure proper image sizing */
-    .img-fluid, .img-responsive {
-      width: 100%;
-    }
-  }
-/* Hero section mobile fixes */
-@media (max-width: 768px) {
-  /* Fix hero section text visibility */
+  /* Fix hero section on mobile */
   .hero {
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-background.jpg') !important;
-    display: flex !important;
-    align-items: center !important;
-  }
-  
-  .hero-content {
-    margin: 0 auto !important;
-    padding: 20px !important;
-    max-width: 100% !important;
-    text-align: center !important;
-    color: white !important;
-  }
-  
-  .hero h1 {
-    color: white !important;
-    font-size: 28px !important;
-    margin-bottom: 15px !important;
-  }
-  
-  .hero p {
-    color: white !important;
-    font-size: 16px !important;
-    margin-bottom: 20px !important;
-  }
-  
-  /* Fix button display on mobile */
-  .hero .btn {
-    display: inline-block !important;
-    width: auto !important;
-    margin: 5px !important;
-  }
-}
-/* More aggressive Android/mobile fixes */
-@media (max-width: 768px) {
-  /* Fix ALL text containers and backgrounds */
-  .hero, .hero-content, .hero h1, .hero p, .hero .container,
-  .birds-container, .bird {
-    background-color: transparent !important;
-    background: transparent !important;
-  }
-  
-  /* Stronger gradient overlay for better text visibility */
-  .hero {
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/hero-background.jpg') !important;
-  }
-  
-  /* Force white text with black text shadow for enhanced readability */
-  .hero h1, .hero p, .hero .btn, .hero * {
-    color: white !important;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9) !important;
-  }
-  
-  /* Fix birds opacity and background */
-  .birds-container, .bird {
-    background: none !important;
-    background-color: transparent !important;
-  }
-  
-  /* Fix button appearance */
-  .hero .btn {
-    display: inline-block !important;
-    width: auto !important;
-    margin: 5px !important;
-    background-color: var(--logo-color) !important;
-  }
-  
-  .hero .btn-outline {
-    background-color: transparent !important;
-    border: 2px solid var(--logo-color) !important;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-background.jpg');
   }
 }
