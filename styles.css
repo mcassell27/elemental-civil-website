@@ -14,24 +14,10 @@
   /* Fix hero section on mobile */
   .hero {
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-background.jpg');
-  }
-}
-/* Force light mode regardless of system settings */
-:root {
-  color-scheme: light only;
-}
-
-/* Basic mobile responsiveness */
-@media (max-width: 768px) {
-  /* Make images responsive */
-  img {
-    max-width: 100%;
     height: auto;
-  }
-  
-  /* Fix hero section on mobile */
-  .hero {
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-background.jpg');
+    min-height: 80vh;
+    padding: 80px 0 40px;
+    background-position: center;
   }
   
   /* Center header logo and navigation */
@@ -55,51 +41,26 @@
   nav ul li {
     margin: 5px 10px;
   }
-}
-/* Force light mode regardless of system settings */
-:root {
-  color-scheme: light only;
-}
-
-/* Viewport and scaling fixes */
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-/* Basic mobile responsiveness */
-@media (max-width: 768px) {
-  /* Make images responsive */
-  img {
+  
+  /* Reset any potentially problematic styles */
+  .hero h1 {
+    display: block;
+    width: auto;
     max-width: 100%;
-    height: auto;
+    font-size: 28px;
+    line-height: 1.4;
+    margin: 0 0 15px 0;
+    padding: 0;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
   }
   
-  /* Fix hero section on mobile */
-  .hero {
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-background.jpg');
-  }
-  
-  /* Center header logo and navigation */
-  .nav-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .logo {
-    margin-bottom: 10px;
-    justify-content: center;
-  }
-  
-  nav ul {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  nav ul li {
-    margin: 5px 10px;
+  /* Make sure content container doesn't constrain text */
+  .hero-content {
+    width: 90%;
+    max-width: 90%;
+    padding: 20px;
   }
   
   /* Fix container width on mobile */
@@ -108,56 +69,7 @@ html, body {
     max-width: 100%;
     padding-left: 15px;
     padding-right: 15px;
-  }
-}
-/* Add this to your styles.css file */
-
-/* Fix hero section padding to prevent header overlap */
-@media (max-width: 768px) {
-  .hero {
-    padding-top: 140px !important; /* Increased padding to prevent header overlap */
-    min-height: 100vh; /* Ensure full viewport height */
-  }
-  
-  /* Fix hero content positioning */
-  .hero-content {
-    padding: 20px 15px;
-  }
-  
-  /* Fix horizontal overflow in all sections */
-  .section, .contact, .container {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-    padding-left: 15px;
-    padding-right: 15px;
     box-sizing: border-box;
-  }
-  
-  /* Fix contact form and content to prevent horizontal overflow */
-  .contact-content, .contact-form, .contact-info {
-    width: 100%;
-    max-width: 100%;
-  }
-  
-  /* Ensure form inputs don't overflow */
-  .form-group input, 
-  .form-group textarea, 
-  .form-group select {
-    width: 100%;
-    box-sizing: border-box;
-  }
-}
-/* Fix for missing/cut-off text on mobile */
-@media (max-width: 768px) {
-  /* Fix for hero heading text */
-  .hero h1 {
-    font-size: 32px;
-    width: 100%;
-    max-width: 100%;
-    overflow: visible;
-    white-space: normal;
-    word-break: break-word;
   }
   
   /* Fix for contact section text overflow */
@@ -170,55 +82,5 @@ html, body {
     overflow: visible;
     white-space: normal;
     word-break: break-word;
-  }
-  
-  /* Ensure all headings fit properly on mobile */
-  h1, h2, h3 {
-    width: 100%;
-    max-width: 100%;
-    overflow: visible;
-    white-space: normal;
-  }
-  
-  /* Fix container width issues */
-  .container, .hero-content, .contact-content {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    box-sizing: border-box;
-  }
-}
-/* Fix for missing text and image display on mobile */
-@media (max-width: 768px) {
-  /* Fix heading text - ensure it's visible and fits */
-  .hero h1 {
-    display: block !important;
-    width: 100% !important;
-    font-size: 28px !important;
-    line-height: 1.3 !important;
-    margin-top: 0 !important;
-    word-wrap: break-word !important;
-    -webkit-hyphens: auto !important;
-    -ms-hyphens: auto !important;
-    hyphens: auto !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-  
-  /* Fix hero image positioning to show the top portion */
-  .hero {
-    background-position: center top !important;
-    min-height: 90vh !important; /* Ensures enough height */
-    padding-top: 60px !important; /* Provides space at top for fixed header */
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-  
-  /* Ensure text container has proper spacing */
-  .hero-content {
-    padding: 20px 15px !important;
-    margin-top: 40px !important; /* Push content down slightly */
   }
 }
