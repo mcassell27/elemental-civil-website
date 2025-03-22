@@ -1,4 +1,15 @@
-<style>
+/* Force light mode regardless of system settings */
+:root {
+  color-scheme: light only;
+}
+
+/* Additional protection against dark mode */
+@media (prefers-color-scheme: dark) {
+  body, header, footer, main, div {
+    background-color: white !important;
+    color: #4d4d4d !important;
+  }
+}
   /* Responsive images */
   img {
     max-width: 100%;
@@ -25,4 +36,3 @@
       width: 100%;
     }
   }
-</style>
