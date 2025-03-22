@@ -72,3 +72,42 @@
     margin: 5px !important;
   }
 }
+/* More aggressive Android/mobile fixes */
+@media (max-width: 768px) {
+  /* Fix ALL text containers and backgrounds */
+  .hero, .hero-content, .hero h1, .hero p, .hero .container,
+  .birds-container, .bird {
+    background-color: transparent !important;
+    background: transparent !important;
+  }
+  
+  /* Stronger gradient overlay for better text visibility */
+  .hero {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/hero-background.jpg') !important;
+  }
+  
+  /* Force white text with black text shadow for enhanced readability */
+  .hero h1, .hero p, .hero .btn, .hero * {
+    color: white !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9) !important;
+  }
+  
+  /* Fix birds opacity and background */
+  .birds-container, .bird {
+    background: none !important;
+    background-color: transparent !important;
+  }
+  
+  /* Fix button appearance */
+  .hero .btn {
+    display: inline-block !important;
+    width: auto !important;
+    margin: 5px !important;
+    background-color: var(--logo-color) !important;
+  }
+  
+  .hero .btn-outline {
+    background-color: transparent !important;
+    border: 2px solid var(--logo-color) !important;
+  }
+}
