@@ -148,3 +148,44 @@ html, body {
     box-sizing: border-box;
   }
 }
+/* Fix for missing/cut-off text on mobile */
+@media (max-width: 768px) {
+  /* Fix for hero heading text */
+  .hero h1 {
+    font-size: 32px;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    white-space: normal;
+    word-break: break-word;
+  }
+  
+  /* Fix for contact section text overflow */
+  .contact-info h2, 
+  .contact-info p,
+  .contact-content h2,
+  .contact-content p {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    white-space: normal;
+    word-break: break-word;
+  }
+  
+  /* Ensure all headings fit properly on mobile */
+  h1, h2, h3 {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    white-space: normal;
+  }
+  
+  /* Fix container width issues */
+  .container, .hero-content, .contact-content {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+  }
+}
