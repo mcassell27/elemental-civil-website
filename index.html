@@ -1062,5 +1062,105 @@
             </div>
         </div>
     </footer>
+    <!-- Add this just before the closing </body> tag -->
+<div class="footer-animation">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 120" class="animation-svg">
+    <!-- City construction animation (left side) -->
+    <g class="city-animation">
+      <!-- Building 1 -->
+      <line x1="100" y1="100" x2="100" y2="60" stroke="#333" stroke-width="1" class="animate-build">
+        <animate attributeName="y2" from="100" to="60" dur="2s" begin="0s" fill="freeze" />
+      </line>
+      <line x1="100" y1="60" x2="130" y2="60" stroke="#333" stroke-width="1" class="animate-build">
+        <animate attributeName="x2" from="100" to="130" dur="1s" begin="2s" fill="freeze" />
+      </line>
+      
+      <!-- Building 2 -->
+      <line x1="180" y1="100" x2="180" y2="50" stroke="#333" stroke-width="1" class="animate-build">
+        <animate attributeName="y2" from="100" to="50" dur="2.5s" begin="0.5s" fill="freeze" />
+      </line>
+      <line x1="180" y1="50" x2="210" y2="50" stroke="#333" stroke-width="1" class="animate-build">
+        <animate attributeName="x2" from="180" to="210" dur="1s" begin="3s" fill="freeze" />
+      </line>
+      
+      <!-- Building 3 (reaches center) -->
+      <line x1="260" y1="100" x2="260" y2="40" stroke="#333" stroke-width="1" class="animate-build">
+        <animate attributeName="y2" from="100" to="40" dur="3s" begin="1s" fill="freeze" />
+      </line>
+      <line x1="260" y1="40" x2="300" y2="40" stroke="#333" stroke-width="1" class="animate-build">
+        <animate attributeName="x2" from="260" to="300" dur="1s" begin="4s" fill="freeze" />
+      </line>
+      
+      <!-- Building 4 (center building) -->
+      <line x1="350" y1="100" x2="350" y2="30" stroke="#333" stroke-width="1" class="animate-build">
+        <animate attributeName="y2" from="100" to="30" dur="3.5s" begin="1.5s" fill="freeze" />
+      </line>
+      <line x1="350" y1="30" x2="400" y2="30" stroke="#333" stroke-width="1" class="animate-build">
+        <animate attributeName="x2" from="350" to="400" dur="1s" begin="5s" fill="freeze" />
+      </line>
+      <line x1="380" y1="30" x2="380" y2="50" stroke="#333" stroke-width="1" class="animate-build">
+        <animate attributeName="y2" from="30" to="50" dur="0.5s" begin="6s" fill="freeze" />
+      </line>
+    </g>
+    
+    <!-- Forest growth animation (right side) -->
+    <g class="forest-animation">
+      <!-- Tree 1 (center tree) -->
+      <line x1="600" y1="100" x2="600" y2="50" stroke="#35910e" stroke-width="1" class="animate-grow">
+        <animate attributeName="y2" from="100" to="50" dur="2s" begin="1s" fill="freeze" />
+      </line>
+      <line x1="585" y1="70" x2="615" y2="70" stroke="#35910e" stroke-width="1" class="animate-grow">
+        <animate attributeName="x2" from="600" to="615" dur="1s" begin="3s" fill="freeze" />
+        <animate attributeName="x1" from="600" to="585" dur="1s" begin="3s" fill="freeze" />
+      </line>
+      <line x1="590" y1="60" x2="610" y2="60" stroke="#35910e" stroke-width="1" class="animate-grow">
+        <animate attributeName="x2" from="600" to="610" dur="1s" begin="4s" fill="freeze" />
+        <animate attributeName="x1" from="600" to="590" dur="1s" begin="4s" fill="freeze" />
+      </line>
+      
+      <!-- Tree 2 -->
+      <line x1="700" y1="100" x2="700" y2="55" stroke="#35910e" stroke-width="1" class="animate-grow">
+        <animate attributeName="y2" from="100" to="55" dur="2.5s" begin="1.5s" fill="freeze" />
+      </line>
+      <line x1="685" y1="75" x2="715" y2="75" stroke="#35910e" stroke-width="1" class="animate-grow">
+        <animate attributeName="x2" from="700" to="715" dur="1s" begin="4s" fill="freeze" />
+        <animate attributeName="x1" from="700" to="685" dur="1s" begin="4s" fill="freeze" />
+      </line>
+      <line x1="690" y1="65" x2="710" y2="65" stroke="#35910e" stroke-width="1" class="animate-grow">
+        <animate attributeName="x2" from="700" to="710" dur="1s" begin="5s" fill="freeze" />
+        <animate attributeName="x1" from="700" to="690" dur="1s" begin="5s" fill="freeze" />
+      </line>
+      
+      <!-- Tree 3 -->
+      <line x1="800" y1="100" x2="800" y2="45" stroke="#35910e" stroke-width="1" class="animate-grow">
+        <animate attributeName="y2" from="100" to="45" dur="3s" begin="2s" fill="freeze" />
+      </line>
+      <line x1="785" y1="65" x2="815" y2="65" stroke="#35910e" stroke-width="1" class="animate-grow">
+        <animate attributeName="x2" from="800" to="815" dur="1s" begin="5s" fill="freeze" />
+        <animate attributeName="x1" from="800" to="785" dur="1s" begin="5s" fill="freeze" />
+      </line>
+      <line x1="790" y1="55" x2="810" y2="55" stroke="#35910e" stroke-width="1" class="animate-grow">
+        <animate attributeName="x2" from="800" to="810" dur="1s" begin="6s" fill="freeze" />
+        <animate attributeName="x1" from="800" to="790" dur="1s" begin="6s" fill="freeze" />
+      </line>
+    </g>
+    
+    <!-- Meeting in the middle -->
+    <g class="middle-connection">
+      <!-- Connecting element -->
+      <line x1="450" y1="100" x2="550" y2="100" stroke="#333" stroke-width="0" class="connection-line">
+        <animate attributeName="stroke-width" from="0" to="1" dur="0.5s" begin="6s" fill="freeze" />
+        <animate attributeName="y1" from="100" to="70" dur="1s" begin="6.5s" fill="freeze" />
+        <animate attributeName="y2" from="100" to="70" dur="1s" begin="6.5s" fill="freeze" />
+      </line>
+    </g>
+    
+    <!-- Ground line -->
+    <line x1="0" y1="100" x2="1000" y2="100" stroke="#333" stroke-width="1" />
+    
+    <!-- Fade out animation for the entire SVG -->
+    <animate xlink:href=".animation-svg" attributeName="opacity" from="1" to="0" dur="2s" begin="10s" fill="freeze" />
+  </svg>
+</div>
 </body>
 </html>
