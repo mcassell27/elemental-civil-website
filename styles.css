@@ -22,15 +22,27 @@
     margin-bottom: 50px !important;
   }
   
-  /* Directly target the hero heading to ensure visibility */
+  /* Control hero heading size and spacing */
   .hero h1 {
+    font-size: 30px !important;
+    line-height: 1.2 !important;
     margin-top: 20px !important;
     padding-top: 80px !important;
     visibility: visible !important;
-    display: block !important;
     position: relative !important;
     z-index: 10 !important;
-    font-size: 32px !important; /* Reduced font size from default */  }
+    width: 90% !important; /* Control width to force wrapping */
+    max-width: 280px !important; /* Limit width to force specific wrapping */
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    hyphens: manual !important;
+  }
+  
+  /* Control hero paragraph text */
+  .hero p {
+    font-size: 16px !important;
+    line-height: 1.3 !important;
+  }
   
   /* Make header more compact */
   header {
@@ -153,29 +165,4 @@
     height: 80px;
     bottom: 15%;
   }
-}
-/* Keep hero heading on two lines only */
-.hero h1 {
-  max-width: 100% !important;
-  white-space: normal !important;
-  font-size: 30px !important; /* Slightly smaller to fit on two lines */
-  line-height: 1.2 !important;
-  display: flex !important;
-  flex-direction: column !important;
-}
-
-/* Target each part of the heading */
-.hero h1::before {
-  content: "Building Infrastructure," !important;
-  display: block !important;
-}
-
-.hero h1::after {
-  content: "Preserving Nature" !important;
-  display: block !important;
-}
-
-/* Hide the original text */
-.hero h1 span, .hero h1 br {
-  display: none !important;
 }
