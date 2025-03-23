@@ -20,7 +20,6 @@
     padding-bottom: 40px;
     background-position: center;
     margin-bottom: 50px !important;
-    font-size: 32px !important; /* Reduced font size from default */
   }
   
   /* Directly target the hero heading to ensure visibility */
@@ -31,7 +30,7 @@
     display: block !important;
     position: relative !important;
     z-index: 10 !important;
-  }
+    font-size: 32px !important; /* Reduced font size from default */  }
   
   /* Make header more compact */
   header {
