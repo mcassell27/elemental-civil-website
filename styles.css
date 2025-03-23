@@ -101,3 +101,19 @@
     text-align: center !important;
   }
 }
+@media (max-width: 768px) {
+  /* Add more space between buttons and recycling icon */
+  .btn-outline, .hero .btn:last-child {
+    margin-bottom: 40px !important; /* Add space below the last button */
+  }
+  
+  /* Adjust recycling icon position */
+  .mission-icon, .mission .pulse {
+    margin-top: 30px !important; /* Push recycling icon down */
+  }
+  
+  /* Ensure mission section has proper spacing */
+  .mission {
+    padding-top: 30px !important;
+  }
+}
