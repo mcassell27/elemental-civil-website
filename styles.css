@@ -16,10 +16,21 @@
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-background.jpg');
     height: auto;
     min-height: 80vh;
-    padding-top: 300px; /* Keep the larger padding that worked */
+    padding-top: 280px; /* Slightly reduced from 300px */
     padding-bottom: 40px;
     background-position: center;
     margin-bottom: 50px !important;
+  }
+  
+  /* Make header more compact */
+  header {
+    padding-top: 5px !important; /* Reduce top padding */
+    padding-bottom: 5px !important; /* Small padding to keep some space */
+  }
+  
+  /* Make logo smaller */
+  .logo img {
+    height: 60px !important; /* Smaller logo */
   }
   
   /* Center header logo and navigation */
@@ -28,25 +39,24 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 5px 0 !important; /* Reduced padding */
   }
   
   .logo {
-    margin-bottom: 10px;
+    margin-bottom: 5px !important; /* Reduced margin */
     justify-content: center;
   }
   
   nav ul {
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 0 !important; /* Remove top margin */
+    padding-top: 0 !important; /* Remove top padding */
   }
   
   nav ul li {
-    margin: 5px 10px;
-  }
-  
-  /* Just fix the header bottom spacing */
-  header {
-    padding-bottom: 5px !important; /* Small padding to keep some space */
+    margin: 3px 8px !important; /* Smaller margins */
+    font-size: 14px !important; /* Slightly smaller font */
   }
   
   /* Fix button spacing */
