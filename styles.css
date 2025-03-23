@@ -36,6 +36,10 @@
     white-space: normal !important;
     word-wrap: break-word !important;
     hyphens: manual !important;
+      /* Keep your existing styles */
+  text-align: center !important; /* Center the text */
+  margin-left: auto !important;
+  margin-right: auto !important;
   }
   
   /* Control hero paragraph text */
