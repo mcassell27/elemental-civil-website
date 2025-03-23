@@ -16,21 +16,31 @@
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-background.jpg');
     height: auto;
     min-height: 80vh;
-    padding-top: 320px; /* Increased padding to ensure "Building" is visible */
+    padding-top: 320px; /* Keep this high */
     padding-bottom: 40px;
     background-position: center;
     margin-bottom: 50px !important;
   }
   
+  /* Directly target the hero heading to ensure visibility */
+  .hero h1 {
+    margin-top: 20px !important;
+    padding-top: 20px !important;
+    visibility: visible !important;
+    display: block !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+  
   /* Make header more compact */
   header {
-    padding-top: 5px !important; /* Reduce top padding */
-    padding-bottom: 0px !important; /* Remove bottom padding completely */
+    padding-top: 5px !important;
+    padding-bottom: 0px !important;
   }
   
   /* Make logo medium size */
   .logo img {
-    height: 75px !important; /* Middle ground for logo size */
+    height: 75px !important;
   }
   
   /* Center header logo and navigation */
@@ -39,25 +49,25 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 5px 0 0 0 !important; /* No bottom padding */
+    padding: 5px 0 0 0 !important;
   }
   
   .logo {
-    margin-bottom: 5px !important; /* Reduced margin */
+    margin-bottom: 5px !important;
     justify-content: center;
   }
   
   nav ul {
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 0 !important; /* Remove top margin */
-    padding-top: 0 !important; /* Remove top padding */
-    margin-bottom: 0 !important; /* Remove bottom margin */
-    padding-bottom: 0 !important; /* Remove bottom padding */
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
   
   nav ul li {
-    margin: 3px 8px !important; /* Smaller margins */
+    margin: 3px 8px !important;
   }
   
   /* Fix button spacing */
@@ -70,7 +80,7 @@
     width: 90%;
     max-width: 90%;
     padding: 20px;
-    margin-top: 20px; /* Additional space */
+    margin-top: 20px !important;
   }
   
   /* Fix container width on mobile */
@@ -122,14 +132,14 @@
 /* Footer animation styling */
 .footer-animation {
   position: fixed;
-  bottom: 10%; /* Positioned at appropriate height */
+  bottom: 10%;
   left: 0;
   width: 100%;
-  height: 120px; /* Reduced height */
+  height: 120px;
   z-index: 90;
-  pointer-events: none; /* So it doesn't interfere with clicks */
-  background: transparent; /* No background */
-  opacity: 0.7; /* Subtle transparency */
+  pointer-events: none;
+  background: transparent;
+  opacity: 0.7;
 }
 
 .animation-svg {
@@ -140,7 +150,7 @@
 /* Ensure animation is subtle on mobile */
 @media (max-width: 768px) {
   .footer-animation {
-    height: 80px; /* Even smaller on mobile */
-    bottom: 15%; /* Adjusted position */
+    height: 80px;
+    bottom: 15%;
   }
 }
