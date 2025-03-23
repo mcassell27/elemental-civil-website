@@ -16,7 +16,7 @@
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-background.jpg');
     height: auto;
     min-height: 80vh;
-    padding-top: 280px; /* Slightly reduced from 300px */
+    padding-top: 320px; /* Increased padding to ensure "Building" is visible */
     padding-bottom: 40px;
     background-position: center;
     margin-bottom: 50px !important;
@@ -25,12 +25,12 @@
   /* Make header more compact */
   header {
     padding-top: 5px !important; /* Reduce top padding */
-    padding-bottom: 5px !important; /* Small padding to keep some space */
+    padding-bottom: 0px !important; /* Remove bottom padding completely */
   }
   
-  /* Make logo smaller */
+  /* Make logo medium size */
   .logo img {
-    height: 60px !important; /* Smaller logo */
+    height: 75px !important; /* Middle ground for logo size */
   }
   
   /* Center header logo and navigation */
@@ -39,7 +39,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 5px 0 !important; /* Reduced padding */
+    padding: 5px 0 0 0 !important; /* No bottom padding */
   }
   
   .logo {
@@ -52,11 +52,12 @@
     flex-wrap: wrap;
     margin-top: 0 !important; /* Remove top margin */
     padding-top: 0 !important; /* Remove top padding */
+    margin-bottom: 0 !important; /* Remove bottom margin */
+    padding-bottom: 0 !important; /* Remove bottom padding */
   }
   
   nav ul li {
     margin: 3px 8px !important; /* Smaller margins */
-    font-size: 14px !important; /* Slightly smaller font */
   }
   
   /* Fix button spacing */
