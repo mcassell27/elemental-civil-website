@@ -11,14 +11,10 @@
     height: auto;
   }
   
-  /* Fix hero section on mobile - add more space at top */
+  /* Fix hero section on mobile */
   .hero {
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-background.jpg');
-    height: auto;
-    min-height: 80vh;
-    padding-top: 175px; /* Significantly increased padding to account for fixed header */
-    padding-bottom: 40px;
-    background-position: center;
+    padding-top: 220px; /* Increased to 220px for maximum spacing */
   }
   
   /* Center header logo and navigation */
@@ -41,34 +37,5 @@
   
   nav ul li {
     margin: 5px 10px;
-  }
-  
-  /* Make sure content container doesn't constrain text */
-  .hero-content {
-    width: 90%;
-    max-width: 90%;
-    padding: 20px;
-    margin-top: 20px; /* Additional space */
-  }
-  
-  /* Fix container width on mobile */
-  .container {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    box-sizing: border-box;
-  }
-  
-  /* Fix for contact section text overflow */
-  .contact-info h2, 
-  .contact-info p,
-  .contact-content h2,
-  .contact-content p {
-    width: 100%;
-    max-width: 100%;
-    overflow: visible;
-    white-space: normal;
-    word-break: break-word;
   }
 }
