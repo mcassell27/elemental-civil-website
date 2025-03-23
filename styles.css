@@ -154,3 +154,28 @@
     bottom: 15%;
   }
 }
+/* Keep hero heading on two lines only */
+.hero h1 {
+  max-width: 100% !important;
+  white-space: normal !important;
+  font-size: 30px !important; /* Slightly smaller to fit on two lines */
+  line-height: 1.2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Target each part of the heading */
+.hero h1::before {
+  content: "Building Infrastructure," !important;
+  display: block !important;
+}
+
+.hero h1::after {
+  content: "Preserving Nature" !important;
+  display: block !important;
+}
+
+/* Hide the original text */
+.hero h1 span, .hero h1 br {
+  display: none !important;
+}
