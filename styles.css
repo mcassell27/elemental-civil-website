@@ -11,14 +11,15 @@
     height: auto;
   }
   
-  /* Fix hero section on mobile - add more space at top */
+  /* Fix hero section on mobile */
   .hero {
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-background.jpg');
     height: auto;
     min-height: 80vh;
-    padding-top: 350px; /* Significantly increased padding to account for fixed header */
+    padding-top: 300px; /* Keep this the same for now */
     padding-bottom: 40px;
     background-position: center;
+    margin-bottom: 50px !important;
   }
   
   /* Center header logo and navigation */
@@ -27,6 +28,19 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-bottom: 0 !important; /* Remove bottom padding */
+  }
+  
+  /* Reduce space after navigation */
+  nav {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 5px !important; /* Reduce bottom margin */
   }
   
   .logo {
@@ -34,13 +48,18 @@
     justify-content: center;
   }
   
-  nav ul {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
   nav ul li {
     margin: 5px 10px;
+  }
+  
+  /* Remove any padding from header */
+  header {
+    padding-bottom: 0 !important;
+  }
+  
+  /* Fix button spacing */
+  .hero .btn {
+    margin-bottom: 15px !important;
   }
   
   /* Make sure content container doesn't constrain text */
@@ -71,18 +90,13 @@
     white-space: normal;
     word-break: break-word;
   }
-}
-@media (max-width: 768px) {
-  /* Target the hero heading specifically */
-  .hero h1 {
-    margin-top: 300px !important; /* Push just the heading down */
-    display: block !important;
-    visibility: visible !important;
+  
+  /* Push mission section down */
+  .mission {
+    margin-top: 50px !important;
+    padding-top: 50px !important;
   }
   
-  /* Your other existing mobile styles... */
-}
-@media (max-width: 768px) {
   /* Make contact info items stack vertically */
   .contact-info-item {
     display: block !important;
@@ -101,19 +115,29 @@
     text-align: center !important;
   }
 }
+
+/* Footer animation styling */
+.footer-animation {
+  position: fixed;
+  bottom: 10%; /* Positioned at appropriate height */
+  left: 0;
+  width: 100%;
+  height: 120px; /* Reduced height */
+  z-index: 90;
+  pointer-events: none; /* So it doesn't interfere with clicks */
+  background: transparent; /* No background */
+  opacity: 0.7; /* Subtle transparency */
+}
+
+.animation-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensure animation is subtle on mobile */
 @media (max-width: 768px) {
-  /* Add more space between buttons and recycling icon */
-  .btn-outline, .hero .btn:last-child {
-    margin-bottom: 40px !important; /* Add space below the last button */
-  }
-  
-  /* Adjust recycling icon position */
-  .mission-icon, .mission .pulse {
-    margin-top: 30px !important; /* Push recycling icon down */
-  }
-  
-  /* Ensure mission section has proper spacing */
-  .mission {
-    padding-top: 30px !important;
+  .footer-animation {
+    height: 80px; /* Even smaller on mobile */
+    bottom: 15%; /* Adjusted position */
   }
 }
