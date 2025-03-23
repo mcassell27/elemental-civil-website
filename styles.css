@@ -16,7 +16,7 @@
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-background.jpg');
     height: auto;
     min-height: 80vh;
-    padding-top: 150px; /* Significantly increased padding to account for fixed header */
+    padding-top: 250px; /* Significantly increased padding to account for fixed header */
     padding-bottom: 40px;
     background-position: center;
   }
